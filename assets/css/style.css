@@ -1,5 +1,64 @@
 /* import Google font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-@import '~pretty-checkbox/src/pretty-checkbox.scss';
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); */
 
+* {
+    font-size: 16px;
+  }
+  
+  .tax-calculator {
+    margin-top: 2em;
+  }
+  
+  .form {
+    padding: 0 2em;
+  }
+  
+  .form-group {
+    height: 4em;
+  }
+  
+  label {
+    font-weight: 600;
+  }
+  
 
+  
+  .results-label {
+    font-weight: 600;
+  }
+  
+  .results-amount {
+    font-weight: 700;
+  }
+  
+  .btn-calculate {
+    background-color: #59ba41;
+    color: #fff;
+    font-weight: 600;
+    width: 100%;
+    height: 3em;
+  }
+  
+  .btn-calculate:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* remove bootstrap glow */
+  input[type="text"] {
+    outline: none;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+  
+  input[type="text"]:focus {
+      border-color: #007bff !important;
+    }
+  
+  
+  @media only screen and (max-width: 768px) {
+    .form-group {
+      margin-bottom: 1.5em;
+    }
+  }
+  

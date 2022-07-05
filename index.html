@@ -1,315 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KRA Tax calculator 2022</title>
-    <!--CDN LINKS FOR ICON-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudfare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <!--CSS LINK-->
-    <link href="stylesheet" src="./assets/style.css">
-    <link href="stylesheet" src="./assets/normalize.css">
-    <link href=" https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" rel="stylesheet">
-    <!--BOOTSTRAP LINKS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
-    <section class="fxt-template-layout2">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-12 fxt-bg-color">
-					<div class="fxt-content">
-						<div class="fxt-form">
-							<form method="post">
-							<!---- FORM START--->
-								<div class="form-group" style="display:none;">
-										<div class="row">
-											<div class="col-sm-6 col-form-label">
-												<label for="year">Tax Year:</label>
-											</div>
-
-											<div class="col-sm-6">
-											<div class="pretty p-icon">
-										        <input name="year" value="2022" id="2022" type="radio" checked/>
-										         <div class="state p-primary-o">
-										            <i class="icon mdi mdi-check"></i>
-										            <label>From January 2021</label>
-										        </div>
-										    </div>
-
-											<div class="pretty p-icon">
-										        <input name="year" value="2021" id="2021" type="radio" />
-										         <div class="state p-primary-o">
-										            <i class="icon mdi mdi-check"></i>
-										            <label>April 2020 - December 2020</label>
-										        </div>
-										    </div>
-
-											<div class="pretty p-icon">
-										        <input name="year" value="2020" id="2020" type="radio">
-										        <div class="state p-primary-o">
-										            <i class="icon mdi mdi-check"></i>
-										            <label>January - March 2020</label>
-										        </div>
-										    </div>
-
-										    
-										</div>
-										</div>
-									</div>
-
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-form-label">
-												<label for="period">Pay Period:</label>
-											</div>
-
-											<div class="col-sm-6">
-											<div class="pretty p-icon">
-										        <input id="pmonth" name="period" value="month" type="radio" checked/>
-										         <div class="state p-primary-o">
-										            <i class="icon mdi mdi-check"></i>
-										            <label>Month</label>
-										        </div>
-										    </div>
-
-										    <div class="pretty p-icon">
-										        <input id="pyear" name="period" value="year" type="radio" />
-										         <div class="state p-primary-o">
-										            <i class="icon mdi mdi-check"></i>
-										            <label>Year</label>
-										        </div>
-										    </div>
-
-										    
-										</div>
-										</div>
-									</div>
-
-
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-form-label">
-												<label for="salary">Basic Salary:</label>
-											</div>
-											<div class="col-sm-6">
-												<div class="input-group">
-												<input type="text" name="salary" id="salary" class="form-control required salary" value="0" placeholder="your Salary">
-												<div class="input-group-append">
-														<span class="input-group-text bg-white">Ksh</span>
-												</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-form-label">
-												<label for="benefits">Benefits (Bonus, Allowance):</label>
-											</div>
-											<div class="col-sm-6">
-												<div class="input-group">
-												<input type="text" name="benefits" id="benefits" class="form-control benefits" value="0" placeholder="your Benefits" required/>
-												<div class="input-group-append">
-														<span class="input-group-text bg-white">KSh</span>
-													</div>
-												</div>
-
-											</div>
-										</div>
-									</div>
-
-
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-form-label">
-												<label for="nssf">Deduct NSSF:</label>
-											</div>
-
-
-
-											<div class="col-sm-6">
-											<div class="pretty p-icon p-curve p-tada">
-										        <input type="radio" name="pension" id="pyes" value="yes" checked>
-										        <div class="state p-primary-o">
-										            <i class="icon mdi mdi-check"></i>
-										            <label>Yes</label>
-										        </div>
-										    </div>
-										    
-										    <div class="pretty p-icon p-curve p-tada">
-										        <input type="radio" name="pension" id="pno" value="no">
-										        <div class="state p-primary-o">
-										            <i class="icon mdi mdi-check"></i>
-										            <label>No</label>
-										        </div>
-										    </div>
-
-										    
-										</div>
-										</div>
-									</div>
-
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-form-label">
-												<label for="nssfrate">NSSF Rates:</label>
-											</div>
-
-											<div class="col-sm-6">
-											<div class="pretty p-icon p-curve p-tada">
-										        <input type="radio" name="rates" id="new" value="new" checked>
-										        <div class="state p-primary-o">
-										            <i class="icon mdi mdi-check"></i>
-										            <label>New NSSF Rates (Tiered)</label>
-										        </div>
-										    </div>
-										    
-										    <div class="pretty p-icon p-curve p-tada">
-										        <input type="radio" name="rates" id="old" value="old">
-										        <div class="state p-primary-o">
-										            <i class="icon mdi mdi-check"></i>
-										            <label>Old NSSF Rates (Ksh200)</label>
-										        </div>
-										    </div>
-
-										    
-										</div>
-										</div>
-									</div>
-
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-form-label">
-												<label for="nhif">Deduct NHIF:</label>
-											</div>
-
-											<div class="col-sm-6">
-											<div class="pretty p-icon p-curve p-tada">
-										        <input type="radio" name="insurance" id="iyes" value="yes" checked/>
-										        <div class="state p-primary-o">
-										            <i class="icon mdi mdi-check"></i>
-										            <label>Yes</label>
-										        </div>
-										    </div>
-										    
-										    <div class="pretty p-icon p-curve p-tada">
-										        <input type="radio" name="insurance" id="ino" value="no">
-										        <div class="state p-primary-o">
-										            <i class="icon mdi mdi-check"></i>
-										            <label>No</label>
-										        </div>
-										    </div>
-										</div>
-										</div>
-									</div>
-
-									<div class="col-12 form-group" style="display: none;">
-										<div class="row">
-											<div class="col-sm-6 col-form-label">
-												<label for="nhdf">Deduct NHDF Contribution (1.5%):</label>
-											</div>
-
-											<div class="col-sm-6">
-											<div class="pretty p-icon p-curve p-tada">
-										        <input type="radio" name="housing" id="hyes" value="yes" />
-										        <div class="state p-primary-o">
-										            <i class="icon mdi mdi-check"></i>
-										            <label>Yes</label>
-										        </div>
-										    </div>
-										    
-										    <div class="pretty p-icon p-curve p-tada">
-										        <input type="radio" name="housing" id="hno" value="no" checked/>
-										        <div class="state p-primary-o">
-										            <i class="icon mdi mdi-check"></i>
-										            <label>No</label>
-										        </div>
-										    </div>
-										</div>
-										</div>
-									</div>
-
-								<div class="form-group">
-										<button type="button" onclick="calculate_paye();" class="fxt-btn-fill">CALCULATE</button>
-								</div>
-								<!-- END FORM --->
-							</form>
-						</div>
-					</div>
-				</div>
-
-				
-				<!--- RESULTS SECTION -------->
-				<div class="col-lg-6 col-12 fxt-bg-color">
-				<div class="fxt-content">
-				
-						<div id="payeresults">
-						<table class="table table-bordered">
-							<tbody>
-							 <tr>
-							  <td class="results-label">Income Before Pension Deduction</td>
-							  <td class="results-amount">Ksh0.00</td>
-							  </tr>
-							  <tr>
-							  <td class="results-label">Deductible NSSF Pension Contribution</td>
-							  <td class="results-amount">Ksh0.00</td>
-							  </tr>
-							  <tr>
-							  <td class="results-label">Income After Pension Deductions</td>
-							  <td class="results-amount">Ksh0.00</td>
-							  </tr>
-							  <tr>
-							  <td class="results-label">Benefits in Kind</td>
-							  <td class="results-amount">Ksh0.00</td>
-							  </tr>
-							  <tr>
-							  <td class="results-label">Taxable Income</td>
-							  <td class="results-amount">Ksh0.00</td>
-							  </tr>
-							  <tr>
-							  <td class="results-label">PAYE: Tax on Taxable Income</td>
-							  <td class="results-amount">Ksh0.00</td>
-							  </tr>
-							  <tr>
-							  <td class="results-label">Personal Relief</td>
-							  <td class="results-amount">Ksh0.00</td>
-							  </tr>
-							  <tr>
-							  <td class="results-label">Tax Net off Relief</td>
-							  <td class="results-amount">Ksh0.00</td>
-							  </tr>
-							 
-							  <tr>
-							  <td class="results-label">PAYE</td>
-							  <td class="results-amount">Ksh0.00</td>
-							  </tr>
-							 <tr>
-							  <td class="results-label">Chargeable Income</td>
-							  <td class="results-amount">Ksh0.00</td>
-							  </tr>
-							  <tr>
-							  <td class="results-label">NHIF Contribution</td>
-							  <td class="results-amount">Ksh0.00</td>
-							  </tr>
-							  <tr>
-							  <td class="results-label">Net Pay</td>
-							  <td class="results-amount">Ksh0.00</td>
-							  </tr>
-							</tbody>
-						  </table>
-						</div>
-					</div>
-				</div>
-				<!--- END RESULTS SECTION -------->
-			</div>
-        </div>
-    </section>
-
     
-    <script src="./assets/main.js"></script>
-</body>
+    <link
+      rel="stylesheet"
+      href=" https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"
+    />
+    <!--BOOTSTRAP LINKS-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+	
+    <link rel="stylesheet" href="/assets/css/style.css">
+  </head>
+  <body>
+	  <h2 style="text-align: center; margin-top: 1.5em">KRA TAX CALCULATOR</h2>
+    <div class="container tax-calculator">
+      <div class="row">
+        <!--- FORM -------->
+        <div class="col-lg-6 col-12 form">
+          <form method="post">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6 col-form-label">
+                  <label for="period">PAY PERIOD:</label>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="pretty p-svg p-curve">
+                    <input
+                      type="radio"
+                      id="month"
+                      name="pay_period"
+                      value="month"
+                    />
+                    <div class="state p-primary">
+                      <!-- svg path -->
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                        <path
+                          d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                          style="stroke: white; fill: white"
+                        ></path>
+                      </svg>
+                      <label>MONTH</label>
+                    </div>
+                  </div>
+
+                  <div class="pretty p-svg p-curve">
+                    <input
+                      type="radio"
+                      id="year"
+                      name="pay_period"
+                      value="year"
+                    />
+                    <div class="state p-primary">
+                      <!-- svg path -->
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                        <path
+                          d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                          style="stroke: white; fill: white"
+                        ></path>
+                      </svg>
+                      <label>YEAR</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6 col-form-label">
+                  <label for="salary">BASIC SALARY:</label>
+                </div>
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      name="salary"
+                      id="salary"
+                      class="form-control required salary"
+                      value="0"
+                      placeholder="Your salary"
+                    />
+                    <div class="input-group-append">
+                      <span class="input-group-text bg-white">KSH</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6 col-form-label">
+                  <label for="benefits">BENEFITS (BONUS, ALLOWANCE):</label>
+                </div>
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      name="benefits"
+                      id="benefits"
+                      class="form-control benefits"
+                      value="0"
+                      placeholder="your Benefits"
+                      required
+                    />
+                    <div class="input-group-append">
+                      <span class="input-group-text bg-white">KSH</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6 col-form-label">
+                  <label for="nssf">DEDUCT NSSF:</label>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="pretty p-svg p-curve">
+                    <input
+                      type="radio"
+                      id="nssf_yes"
+                      name="deduct_nssf"
+                      value="yes"
+                    />
+                    <div class="state p-primary">
+                      <!-- svg path -->
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                        <path
+                          d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                          style="stroke: white; fill: white"
+                        ></path>
+                      </svg>
+                      <label>YES</label>
+                    </div>
+                  </div>
+
+                  <div class="pretty p-svg p-curve">
+                    <input
+                      type="radio"
+                      id="nssf_no"
+                      name="deduct_nssf"
+                      value="no"
+                    />
+                    <div class="state p-primary">
+                      <!-- svg path -->
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                        <path
+                          d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                          style="stroke: white; fill: white"
+                        ></path>
+                      </svg>
+                      <label>NO</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6 col-form-label">
+                  <label for="nssfrate">NSSF RATES:</label>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="pretty p-svg p-curve">
+                    <input type="radio" id="new" name="nssf_rate" value="new" />
+                    <div class="state p-primary">
+                      <!-- svg path -->
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                        <path
+                          d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                          style="stroke: white; fill: white"
+                        ></path>
+                      </svg>
+                      <label>NEW NSSF RATES (TIERED)</label>
+                    </div>
+                  </div>
+
+                  <div class="pretty p-svg p-curve">
+                    <input type="radio" id="old" name="nssf_rate" value="old" />
+                    <div class="state p-primary">
+                      <!-- svg path -->
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                        <path
+                          d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                          style="stroke: white; fill: white"
+                        ></path>
+                      </svg>
+                      <label>OLD NSSF RATES (KSH 200)</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6 col-form-label">
+                  <label for="nhif">DEDUCT NHIF:</label>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="pretty p-svg p-curve">
+                    <input
+                      type="radio"
+                      id="nhif_yes"
+                      name="deduct_nhif"
+                      value="yes"
+                    />
+                    <div class="state p-primary">
+                      <!-- svg path -->
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                        <path
+                          d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                          style="stroke: white; fill: white"
+                        ></path>
+                      </svg>
+                      <label>YES</label>
+                    </div>
+                  </div>
+
+                  <div class="pretty p-svg p-curve">
+                    <input
+                      type="radio"
+                      id="nhif_no"
+                      name="deduct_nhif"
+                      value="no"
+                    />
+                    <div class="state p-primary">
+                      <!-- svg path -->
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                        <path
+                          d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                          style="stroke: white; fill: white"
+                        ></path>
+                      </svg>
+                      <label>NO</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <button
+                type="button"
+                onclick="calculate_paye()"
+                class="btn btn-calculate"
+              >
+                CALCULATE
+              </button>
+            </div>
+            <!-- END FORM --->
+          </form>
+        </div>
+        <!--- END FORM -------->
+
+        <!--- RESULTS -------->
+        <div class="col-lg-6 col-12 results">
+          <div class="fxt-content">
+            <div id="payeresults">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td class="results-label" style="width: 50%">
+                      INCOME BEFORE PENSION DEDUCTION
+                    </td>
+                    <td
+                      class="results-amount"
+                      id="income_before_pension_deduction"
+                    >
+                      KSH0.00
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="results-label">
+                      DEDUCTIBLE NSSF PENSION CONTRIBUTION
+                    </td>
+                    <td
+                      class="results-amount"
+                      id="deductible_nssf_pension_contribution"
+                    >
+                      KSH0.00
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="results-label">
+                      INCOME AFTER PENSION DEDUCTIONS
+                    </td>
+                    <td
+                      class="results-amount"
+                      id="income_after_persion_deductons"
+                    >
+                      KSH0.00
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="results-label">BENEFITS IN KIND</td>
+                    <td class="results-amount" id="benefits_in_kind">
+                      KSH0.00
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="results-label">TAXABLE INCOME</td>
+                    <td class="results-amount" id="taxable_income">KSH0.00</td>
+                  </tr>
+                  <tr>
+                    <td class="results-label">TAX ON TAXABLE INCOME</td>
+                    <td class="results-amount" id="tax_on_taxable_income">
+                      KSH0.00
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="results-label">PERSONAL RELIEF</td>
+                    <td class="results-amount" id="personal_relief">KSH0.00</td>
+                  </tr>
+                  <tr>
+                    <td class="results-label">TAX NET OFF RELIEF</td>
+                    <td class="results-amount" id="tax_net_off_relief">
+                      KSH0.00
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="results-label">PAYE</td>
+                    <td class="results-amount" id="paye">KSH0.00</td>
+                  </tr>
+                  <tr>
+                    <td class="results-label">CHARGEABLE INCOME</td>
+                    <td class="results-amount" id="chargeable_income">
+                      KSH0.00
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="results-label">NHIF CONTRIBUTION</td>
+                    <td class="results-amount" id=" nhif_contribution">
+                      KSH0.00
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="results-label">NET PAY</td>
+                    <td class="results-amount" id="net_pay">KSH0.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--- END RESULTS -------->
+      </div>
+    </div>
+
+    <script src="./assets/javascript/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
